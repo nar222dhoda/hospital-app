@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @typeofpet.name %>
+</p>
+
+<p>
+  <strong>Pet:</strong>
+  <%= @typeofpet.pet %>
+</p>
+
+<%= link_to 'Edit', edit_typeofpet_path(@typeofpet) %> |
+<%= link_to 'Back', typeofpets_path %>

@@ -1,0 +1,35 @@
+<h1>Listing appoints</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reminder</th>
+      <th>Reason</th>
+      <th>Past visit</th>
+      <th>Custm</th>
+      <th>Doctor</th>
+      <th>Pet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appoints.each do |appoint| %>
+      <tr>
+        <td><%= appoint.reminder %></td>
+        <td><%= appoint.reason %></td>
+        <td><%= appoint.past_visit %></td>
+        <td><%= appoint.custm %></td>
+        <td><%= appoint.doctor %></td>
+        <td><%= appoint.pet %></td>
+        <td><%= link_to 'Show', appoint %></td>
+        <td><%= link_to 'Edit', edit_appoint_path(appoint) %></td>
+        <td><%= link_to 'Destroy', appoint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Appoint', new_appoint_path %>

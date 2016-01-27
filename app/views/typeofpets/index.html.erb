@@ -1,0 +1,27 @@
+<h1>Listing typeofpets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Pet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @typeofpets.each do |typeofpet| %>
+      <tr>
+        <td><%= typeofpet.name %></td>
+        <td><%= typeofpet.pet %></td>
+        <td><%= link_to 'Show', typeofpet %></td>
+        <td><%= link_to 'Edit', edit_typeofpet_path(typeofpet) %></td>
+        <td><%= link_to 'Destroy', typeofpet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Typeofpet', new_typeofpet_path %>

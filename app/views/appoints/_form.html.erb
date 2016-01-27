@@ -1,0 +1,41 @@
+<%= form_for(@appoint) do |f| %>
+  <% if @appoint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appoint.errors.count, "error") %> prohibited this appoint from being saved:</h2>
+
+      <ul>
+      <% @appoint.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reminder %><br>
+    <%= f.text_field :reminder %>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br>
+    <%= f.text_field :reason %>
+  </div>
+  <div class="field">
+    <%= f.label :past_visit %><br>
+    <%= f.datetime_select :past_visit %>
+  </div>
+  <div class="field">
+    <%= f.label :custm_id %><br>
+    <%= f.text_field :custm_id %>
+  </div>
+  <div class="field">
+    <%= f.label :doctor_id %><br>
+    <%= f.text_field :doctor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pet_id %><br>
+    <%= f.text_field :pet_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
